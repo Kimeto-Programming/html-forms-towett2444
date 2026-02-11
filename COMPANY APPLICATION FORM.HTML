@@ -1,47 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>COMPANY APPLICATION FORM</title>
+    <meta charset="UTF-8">
+    <title>Company Registration / Service Request Form</title>
 </head>
+
 <body>
-    <h1> APLICATION FORM</h1>
-    <p>please fill in the application details below </p>
-    <form action="#" method="post">
-        <fieldset>
-            <legend><strong>Personal Information</strong></legend>
-      <label>SOFTWARE COMPANY</label><br>
-         <input type="text" placeholder="Enter company name" required><br>
 
-         <label>Contact Person</label><br>
-        <input type="text" placeholder="Enter company name" required><br>
+<h2>Company Registration / Service Request Form</h2>
 
-         <label>Contact Person</label><br>
-        <input type="text" placeholder="Enter contact person name" required><br>
+<form method="post" action="#">
 
-        <label>Email</label><br>
-        <input type="email" placeholder="Enter email" required><br>
+    <!-- PERSONAL INFORMATION -->
+    <fieldset>
+        <legend>Personal Information</legend>
 
-        <label>Phone Number</label><br>
-        <input type="tel" placeholder="Enter phone number"><br>
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname"
+               required minlength="3" maxlength="50"
+               pattern="[A-Za-z ]+"><br><br>
 
-        <label>Location Found</label><br>
-        <input type="text" placeholder="Where is the company located?"><br>
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-        <label>Company Type</label><br>
-        <select>
-            <option>Technology</option>
-            <option>Finance</option>
-            <option>Healthcare</option>
-            <option>Education</option>
-        </select><br>
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone"
+               required pattern="[0-9]{10,15}"><br><br>
 
-        <label>Description</label><br>
-        <textarea placeholder="Describe the company"></textarea><br>
+    </fieldset>
 
-        <label>Website</label><br>
-        <button type="submit">Submit Application</button>
 
-    </form>
+    <!-- COMPANY INFORMATION -->
+    <fieldset>
+        <legend>Company Information</legend>
+
+        <label for="company">Company Name:</label><br>
+        <input type="text" id="company" name="company"
+               required minlength="2" maxlength="60"><br><br>
+
+        <label for="website">Company Website:</label><br>
+        <input type="url" id="website" name="website" required><br><br>
+
+        <label for="size">Company Size:</label><br>
+        <select id="size" name="size" required>
+            <option value="">Select company size</option>
+            <option value="small">1 - 10 Employees</option>
+            <option value="medium">11 - 50 Employees</option>
+            <option value="large">51 - 200 Employees</option>
+            <option value="enterprise">200+ Employees</option>
+        </select><br><br>
+
+        <label for="industry">Industry:</label><br>
+        <input type="text" id="industry" name="industry"
+               required minlength="3" maxlength="40"><br><br>
+
+    </fieldset>
+
+
+    <!-- SERVICE REQUEST -->
+    <fieldset>
+        <legend>Service Request</legend>
+
+        <p>Service Type:</p>
+
+        <input type="radio" id="consulting" name="service" value="consulting" required>
+        <label for="consulting">Consulting</label><br>
+
+        <input type="radio" id="development" name="service" value="development">
+        <label for="development">Development</label><br>
+
+        <input type="radio" id="support" name="service" value="support">
+        <label for="support">Support</label><br><br>
+
+
+        <p>Preferred Contact Method:</p>
+
+        <input type="checkbox" id="contact_email" name="contact_method" value="email">
+        <label for="contact_email">Email</label><br>
+
+        <input type="checkbox" id="contact_phone" name="contact_method" value="phone">
+        <label for="contact_phone">Phone</label><br>
+
+        <input type="checkbox" id="contact_whatsapp" name="contact_method" value="whatsapp">
+        <label for="contact_whatsapp">WhatsApp</label><br><br>
+
+
+        <label for="date">Appointment Date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time">Appointment Time:</label><br>
+        <input type="time" id="time" name="time" required><br><br>
+
+        <label for="budget">Budget Range:</label><br>
+        <input type="number" id="budget" name="budget"
+               min="100" max="100000" required><br><br>
+
+    </fieldset>
+
+
+    <!-- MESSAGE AND AGREEMENT -->
+    <fieldset>
+        <legend>Message and Agreement</legend>
+
+        <label for="message">Additional Information:</label><br>
+        <textarea id="message" name="message"
+                  minlength="10" maxlength="300"></textarea><br><br>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the Terms and Conditions</label>
+
+    </fieldset>
+
+    <br>
+
+    <!-- BUTTONS -->
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
 
 </body>
 </html>
